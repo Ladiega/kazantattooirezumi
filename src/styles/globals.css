@@ -1,0 +1,9 @@
+body {
+    background-image: url('/textures/washi-paper.png');
+    background-attachment: fixed;
+    @apply bg-washi dark:bg-sumi;
+  }
+  
+  .dark body {
+    background-image: none;
+  }
