@@ -1,39 +1,37 @@
+// app/gallery/[id]/page.tsx
 import type { Metadata } from "next";
 import { tattoos } from "@/lib/tattoos";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-// Tipado para Next.js 15
-type Props = {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
-// Generación de metadatos
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const tattoo = tattoos.find((t) => t.id.toString() === params.id);
-
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const tattoo = tattoos.find((t) => t.id.toString() === id);
   return {
-    title: `${tattoo?.title || "Tatuaje"} | Kazan Tattoo`,
-    description:
-      tattoo?.description || "Detalles del diseño de tatuaje japonés",
-    openGraph: {
-      images: [tattoo?.image || "/default-og-image.jpg"],
-    },
+    title: tattoo?.title || "Tatuaje no encontrado",
+    description: tattoo?.description || "Detalles del diseño",
   };
 }
 
-// Generación de rutas estáticas (SSG)
 export function generateStaticParams() {
   return tattoos.map((tattoo) => ({
     id: tattoo.id.toString(),
   }));
 }
 
-// Componente de página
-export default function TattooDetail({ params }: Props) {
-  const tattoo = tattoos.find((t) => t.id.toString() === params.id);
+// 1. Componente principal con `params` como Promesa
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const tattoo = tattoos.find((t) => t.id.toString() === id);
 
   if (!tattoo) {
     notFound();
@@ -53,23 +51,16 @@ export default function TattooDetail({ params }: Props) {
             src={tattoo.image}
             alt={tattoo.title}
             fill
-            priority
-            className="object-cover rounded-lg shadow-lg"
+            className="object-cover rounded-lg"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
         <div>
-          <h1 className="text-3xl font-serif mb-4 text-sumi dark:text-yuki">
-            {tattoo.title}
-          </h1>
-          <p className="text-lg mb-6 text-shinobu dark:text-shinobu/70">
-            {tattoo.description}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1 bg-akebono/10 text-akebono dark:bg-yamabuki/20 dark:text-yamabuki rounded-full text-sm">
-              {tattoo.style}
-            </span>
-          </div>
+          <h1 className="text-3xl font-serif mb-4">{tattoo.title}</h1>
+          <p className="text-lg mb-4">{tattoo.description}</p>
+          <span className="inline-block px-3 py-1 bg-akebono/10 text-akebono rounded-full">
+            {tattoo.style}
+          </span>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import InkDivider from "@/components/InkDivider";
-
+import Image from "next/image";
 export default function Home() {
   return (
     <>
@@ -47,7 +47,7 @@ export default function Home() {
             },
           ].map((item) => (
             <div key={item.id} className="group overflow-hidden">
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
                 className="w-full h-80 object-cover group-hover:scale-105 transition duration-500"

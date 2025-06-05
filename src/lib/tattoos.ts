@@ -1,4 +1,10 @@
-import { desc } from "framer-motion/client";
+export interface tattoos {
+  id: number;
+  title: string;
+  image: string;
+  style: string;
+  description: string;
+}
 
 export const tattoos = [
     {
@@ -44,3 +50,5 @@ export const tattoos = [
       description: "Un homenaje a los guerreros japoneses, representando honor y lealtad.",
     },
   ];
+
+  
