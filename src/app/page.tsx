@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <section className="py-20 text-center">
         <h1 className="text-5xl md:text-7xl font-serif  mt-10 mb-6">
-          Los <span className="text-akebono">Tatuajes</span> son para siempre.
+          Los <span className="text-akebono">Tatuajes</span> son para siempre!.
         </h1>
         <Link
           href="/gallery"
