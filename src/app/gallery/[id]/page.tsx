@@ -4,6 +4,7 @@ import { tattoos } from "@/lib/tattoos";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { FaArrowLeft } from "react-icons/fa";
 
 export async function generateMetadata({
   params,
@@ -39,9 +40,19 @@ export default async function Page({
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
-      <div className="mb-8">
-        <Link href="/gallery" className="text-sm underline hover:text-akebono">
-          ← Volver a la galería
+      <div className="mb-8 ">
+        <Link
+          href="/gallery"
+          className="text-sm underline hover:text-akebono hover:text-red-400 "
+        >
+          <div className="flex gap-2 items-center">
+            <div>
+              <FaArrowLeft />
+            </div>
+            <div>
+              <p> Volver a la galería</p>
+            </div>
+          </div>
         </Link>
       </div>
 
