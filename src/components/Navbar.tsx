@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="py-6 border-b border-sumi/10 dark:border-yuki/10">
       <div className="flex justify-between items-center">
         <Link href="/" className="text-2xl font-serif">
-          火山 彫り物 (Kazan Tattoo Irezumi)
+          火山 彫り物 Kazan Tattoo Irezumi
         </Link>
 
         <div className="flex items-center gap-4">

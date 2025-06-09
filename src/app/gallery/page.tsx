@@ -3,7 +3,7 @@ import TattooCard from "@/components/TattooCard";
 
 export default function Gallery() {
   return (
-    <div className="py-12 px-4">
+    <div className="py-12 px-4 ">
       <h1 className="text-4xl font-serif text-center mb-12 text-sumi dark:text-yuki">
         Galería de Tatuajes
       </h1>
@@ -16,11 +16,13 @@ export default function Gallery() {
             image: string;
             style: string;
             description?: string;
+            by?: string;
           }) => (
             <TattooCard
               key={tattoo.id}
               {...tattoo}
               description={tattoo.description || "Default description"}
+              by={tattoo.by || "Unknown artist"}
             />
           )
         )}

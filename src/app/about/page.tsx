@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Neva from "../../../public/img/nevaProfile.jpeg";
 import Diego from "../../../public/img/diegoProfile.jpeg";
-import Montan from "../../../public/img/montana.jpg";
+import Montan from "../../../public/img/montana.png";
+
+import { FiInstagram } from "react-icons/fi";
+
+import Link from "next/link";
+
 export default function About() {
   return (
     <section className="py-20 ">
@@ -17,12 +22,26 @@ export default function About() {
         tatuajes con técnica, compromiso y honestidad.
       </p>
 
-      <Image
-        src={Neva}
-        alt="Tatuador trabajando en un diseño"
-        width={300}
-        className="mt-10 mb-10 rounded-lg shadow-lg mr-auto ml-auto max-w-[400px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px]"
-      />
+      <div className="flex flex-col mb-10 justify-center items-center">
+        <div>
+          <Image
+            src={Neva}
+            alt="Tatuador trabajando en un diseño"
+            width={300}
+            className="mt-10 rounded-lg shadow-lg mr-auto ml-auto max-w-[400px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px]"
+          />
+        </div>
+        <div className=" mt-3">
+          <Link
+            href="https://www.instagram.com/nevatattoos/"
+            className="flex items-center"
+            target="_blank"
+          >
+            <FiInstagram />
+            @nevatattoos
+          </Link>
+        </div>
+      </div>
       <p>
         Nelson Neva tiene más de 30 años de experiencia y es uno de los nombres
         fundamentales en la historia del tatuaje en Colombia. Su estilo es
@@ -36,12 +55,27 @@ export default function About() {
         al trabajo real.
       </p>
 
-      <Image
-        src={Diego}
-        alt="Tatuador trabajando en un diseño"
-        width={300}
-        className="  mt-10 mb-10 rounded-lg shadow-lg mr-auto ml-auto max-w-[400px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px]"
-      />
+      <div className="flex flex-col mb-10 justify-center items-center">
+        <div>
+          <Image
+            src={Diego}
+            alt="Tatuador trabajando en un diseño"
+            width={300}
+            className="  mt-10  rounded-lg shadow-lg mr-auto ml-auto max-w-[400px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px]"
+          />
+        </div>
+        <div className=" mt-3">
+          <Link
+            href="https://www.instagram.com/ladiegatattoo/"
+            className="flex items-center"
+            target="_blank"
+          >
+            <FiInstagram />
+            @ladiegatattoo
+          </Link>
+        </div>
+      </div>
+
       <p>
         Diego Gutiérrez, conocido como La Diego, lleva más de 20 años tatuando.
         Su especialidad es el tatuaje japonés (irezumi), una tradición que

@@ -6,6 +6,7 @@ import Link from "next/link";
 
 type TattooCardProps = {
   id: number;
+  by: string;
   title: string;
   image: string;
   style: string;
@@ -14,17 +15,16 @@ type TattooCardProps = {
 
 export default function TattooCard({
   id,
+  by,
   title,
   image,
   style,
-  description,
 }: TattooCardProps) {
   return (
     <motion.div
       whileHover={{ y: -5 }}
       className="group relative overflow-hidden rounded-lg border border-shinobu/20 bg-washi dark:bg-sumi/80 shadow-tattoo-card dark:shadow-tattoo-card-dark transition-all duration-300"
     >
-      {/* Imagen con efecto hover */}
       <div className="relative h-64 overflow-hidden">
         <Image
           src={image}
@@ -35,14 +35,14 @@ export default function TattooCard({
         />
       </div>
 
-      {/* Contenido */}
       <div className="p-4">
         <div className="flex justify-between items-start">
           <div>
             <h3 className="font-serif text-lg text-sumi dark:text-yuki">
               {title}
             </h3>
-            <span className="inline-block mt-1 px-2 py-1 text-xs bg-akebono/10 dark:bg-yamabuki/20 text-akebono dark:text-yamabuki rounded-full">
+            <h2>Por: {by}</h2>
+            <span className="inline-block mt-1  text-xs bg-akebono/10 dark:bg-yamabuki/20 text-akebono dark:text-yamabuki rounded-full">
               {style}
             </span>
           </div>
@@ -53,10 +53,6 @@ export default function TattooCard({
             Ver más
           </Link>
         </div>
-
-        <p className="mt-2 text-sm text-shinobu dark:text-shinobu/70 line-clamp-2">
-          {description}
-        </p>
       </div>
     </motion.div>
   );
