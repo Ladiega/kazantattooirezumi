@@ -9,7 +9,7 @@ export default function Home() {
         </h1>
         <Link
           href="/gallery"
-          className="bg-sumi text-washi px-8 py-3 hover:bg-akebono hover:text-red-400 transition font-light rounded-lg text-lg md:text-xl"
+          className="bg-sumi text-washi px-8 py-3 hover:bg-akebono hover:text-red-400 transition font-light bg-amber-300 hover:bg-red-400 rounded-lg text-lg hover:text-white md:text-xl"
         >
           Ver Galería
         </Link>

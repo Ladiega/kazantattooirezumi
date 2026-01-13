@@ -26,13 +26,18 @@ export default function TattooCard({
       className="group relative overflow-hidden rounded-lg border border-shinobu/20 bg-washi dark:bg-sumi/80 shadow-tattoo-card dark:shadow-tattoo-card-dark transition-all duration-300"
     >
       <div className="relative h-64 overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className=" grayscale-100 hover:grayscale-0 object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        <Link
+          href={`/gallery/${id}`}
+          className="text-xs underline text-shinobu dark:text-shinobu/70 hover:text-akebono dark:hover:text-yamabuki"
+        >
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className=" grayscale-100 hover:grayscale-0 object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </Link>
       </div>
 
       <div className="p-4">

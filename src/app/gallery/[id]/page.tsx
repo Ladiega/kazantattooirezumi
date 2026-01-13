@@ -25,7 +25,6 @@ export function generateStaticParams() {
   }));
 }
 
-// 1. Componente principal con `params` como Promesa
 export default async function Page({
   params,
 }: {
