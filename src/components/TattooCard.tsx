@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 type TattooCardProps = {
   id: number;
@@ -10,55 +11,44 @@ type TattooCardProps = {
   title: string;
   image: string;
   style: string;
-  description: string;
 };
 
-export default function TattooCard({
-  id,
-  by,
-  title,
-  image,
-  style,
-}: TattooCardProps) {
+export default function TattooCard({ id, by, title, image, style }: TattooCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -5 }}
-      className="group relative overflow-hidden rounded-lg border border-shinobu/20 bg-washi dark:bg-sumi/80 shadow-tattoo-card dark:shadow-tattoo-card-dark transition-all duration-300"
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 22 }}
+      className="group"
     >
-      <div className="relative h-64 overflow-hidden">
-        <Link
-          href={`/gallery/${id}`}
-          className="text-xs underline text-shinobu dark:text-shinobu/70 hover:text-akebono dark:hover:text-yamabuki"
-        >
+      <Link href={`/gallery/${id}`} className="block">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-shinobu/60 bg-coal shadow-card">
           <Image
             src={image}
             alt={title}
             fill
-            className=" grayscale-100 hover:grayscale-0 object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover grayscale-[0.4] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-        </Link>
-      </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
 
-      <div className="p-4">
-        <div className="flex justify-between items-start">
-          <div>
-            <h3 className="font-serif text-lg text-sumi dark:text-yuki">
-              {title}
-            </h3>
-            <h2>Por: {by}</h2>
-            <span className="inline-block mt-1  text-xs bg-akebono/10 dark:bg-yamabuki/20 text-akebono dark:text-yamabuki rounded-full">
-              {style}
-            </span>
+          <span className="absolute top-4 left-4 px-3 py-1 text-[11px] uppercase tracking-wider bg-ink/60 backdrop-blur text-fog rounded-full border border-ginko">
+            {style}
+          </span>
+
+          <ArrowUpRight className="absolute top-4 right-4 w-5 h-5 text-yuki opacity-0 group-hover:opacity-100 transition-opacity translate-x-1 group-hover:translate-x-0" />
+
+          <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+            <div>
+              <p className="text-[11px] uppercase tracking-widest text-mist mb-1">
+                {by}
+              </p>
+              <h3 className="font-serif text-xl text-yuki leading-tight">
+                {title}
+              </h3>
+            </div>
           </div>
-          <Link
-            href={`/gallery/${id}`}
-            className="text-xs underline text-shinobu dark:text-shinobu/70 hover:text-akebono dark:hover:text-yamabuki"
-          >
-            Ver más
-          </Link>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }

@@ -148,7 +148,7 @@ export const tattoos = [
     },
     {
       id: 18,
-      title: "HHannya dentro de un botan",
+      title: "Hannya dentro de un botan",
       by: "Neva",
       image: "/img/neva/photo9.png",
       style: "Wabori",
@@ -178,9 +178,30 @@ export const tattoos = [
       style: "Wabori",
       description: "La garza (鷺 – sagi) no canta, no amenaza, no corre. Camina lento entre aguas quietas, o vuela sola sin dejar sombra. En la tradición japonesa, es símbolo de pureza, dignidad y paciencia silenciosa. No se apura. No necesita demostrar. Observa. Tatuada, la garza no grita su presencia. Está ahí como quien sabe quién es. Con el cuello largo, las alas tensas y el cuerpo contenido, su forma lleva una elegancia que no necesita adornos. Es el espíritu que se mueve sin perturbar el agua. A su alrededor, los sakura (桜) —flores de cerezo— marcan el contraste. Florecen con fuerza, pero su belleza es breve. En pocas semanas, el viento se las lleva. Por eso son tan veneradas en Japón: porque nos recuerdan que lo más bello es lo que no dura.    Garza y sakura, juntas, cuentan una historia silenciosa: la del ser que camina firme mientras todo a su alrededor cambia. La que no se aferra a nada, pero no se olvida de lo que ha perdido.",
     },
-   
- 
-    
+    {
+      id: 22,
+      title: "Águila",
+      by: "Cristian",
+      image: "/img/cristian/photo1.png",
+      style: "Tradicional",
+      description: "El águila con las alas abiertas es de esos clásicos que nunca fallan. En lo tradicional significa valentía, libertad y un poco de ego bien entendido. Aquí se le dio un buen juego de líneas gruesas y sombra limpia, para que respire en la piel sin recargarse. Es directa, sin vueltas, como debería ser un tatuaje así.",
+    },
+    {
+      id: 23,
+      title: "Araña",
+      by: "Cristian",
+      image: "/img/cristian/photo2.png",
+      style: "Tradicional",
+      description: "La araña suele leerse como paciencia o como ese toque inquietante que no quiere incomodar a nadie más que a uno mismo. En esta pieza se jugó con los contrastes: patas bien definidas y el cuerpo con un negro sólido que se sostiene en la piel. Tiene personalidad, y se nota que quien la lleva no le tiene miedo a lo que mira de frente.",
+    },
+    {
+      id: 24,
+      title: "Barco",
+      by: "Cristian",
+      image: "/img/cristian/photo3.png",
+      style: "Tradicional",
+      description: "En la tradición marinera, el barco es sinónimo de camino, de volver a puerto y de aguantar lo que venga en el camino. Este se armó con velas bien extendidas y un mar que acompaña la forma del brazo. Es de esas piezas que cuentan de dónde viene uno sin necesidad de explicarlo. Clásico, pero nunca sobrado.",
+    },
   ];
 
   
